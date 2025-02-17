@@ -21,6 +21,7 @@ In this part of the lab, we will open a terminal on each host in the network and
 
   * In the GNS3 topology window, right-click **Linux-1 > Console** from the context menu
   * In the terminal window, on the Linux-1 tab, type **ifconfig** and press Enter
+    
 <p align="center">  
 <img src="https://github.com/user-attachments/assets/01e6e98c-7547-4b94-99cf-11fb0bfd1d07">
 </p>
@@ -123,6 +124,7 @@ On the Linux-1 tab, type **ping -c 4 192.168.0.20** and press Enter to test conn
   * Linux-1 sends an ARP request to all hosts on **192.168.0.0/24**.
   * Linux-2 responds with its MAC address.
   * Linux-1 caches this mapping for future communication.
+    
 <p align="center">
 <img src="https://github.com/user-attachments/assets/51a3f8a0-a71f-46ef-a7f2-7182c377c635">
 </p>
@@ -134,6 +136,7 @@ In Wireshark, you should see that Linux-1 sends a Broadcast message. All hosts a
 <p align="center">
 <img src="https://github.com/user-attachments/assets/6cf150d1-5e76-4b02-a187-3f568cea0364">
 </p>
+
   * Linux-1 sends a **Broadcast ARP request**. 
   * Linux-2 responds with its MAC address.
   * Linux-2 then requests Linux-1’s MAC address for future communication.
@@ -143,8 +146,10 @@ In Wireshark, you should see that Linux-1 sends a Broadcast message. All hosts a
 In the terminal window, on the Linux-1 tab, type ping -c 4 192.168.1.10 and press Enter to ping the Linux-3 device.
 
 In the Wireshark window, notice that Linux-1 again sends a Broadcast message looking for the MAC address of the default gateway. The Router responds with its MAC address and then makes its own request for Linux-1's MAC address.
+
 <p align="center">
 <img src="https://github.com/user-attachments/assets/cb401b12-1c60-472a-ba74-6dc5ac22e3ca">
 </p>
+
   * Linux-1 sends an ARP request for the **default gateway’s MAC address**.
   * The router responds and then queries for Linux-1’s MAC address.
